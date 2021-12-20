@@ -7,11 +7,6 @@ int transponirovanie() {
 	cin >> rows;
 	cout << "введите количество столбцов: ";
 	cin >> columns;
-	int **tArray= new int* [rows];
-	for (int i = 0; i < rows; i++)
-	{
-		tArray[i] = new int[columns];
-	}
 	int** array = new int* [rows];
 	for (int i = 0; i < rows; i++)
 	{
@@ -42,12 +37,8 @@ int transponirovanie() {
 		{
 			for (int j = 0; j < columns; j++)
 			{
-				tArray[i][j] = array[j][i];
-				
+				array[i][j] = array[j][i];	
 			}
-			int temp = rows;
-			rows = columns;
-			columns = temp;
 		}
 	}
 	cout << "\n\n\nтранспонированная матрица: ";
@@ -56,7 +47,7 @@ int transponirovanie() {
 		cout << "\n";
 		for (int j = 0;j < columns;j++)
 		{
-			cout << "a(" << i << "," << j << ")=" << tArray[j][i] << "\t";
+			cout << "a(" << i << "," << j << ")=" <<array[j][i] << "\t";
 		}
 	}
 	cout << "\n\n\n";
