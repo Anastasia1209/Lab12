@@ -61,4 +61,5 @@ int multiplication()
     delete[] A;
     delete[] B;
     delete[] C;
+    return 0;
 }

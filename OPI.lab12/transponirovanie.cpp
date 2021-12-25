@@ -2,16 +2,19 @@
 using namespace std;
 int transponirovanie() {
 	setlocale(LC_CTYPE, "ru");
-	int rows, columns,tmp;
-	cout << "введите количество строк: ";
+	int rows, columns;
+	float tmp;
+
+	cout << "введите количество строк и столбцов: ";
 	cin >> rows;
-	cout << "введите количество столбцов: ";
-	cin >> columns;
-	int** array = new int* [rows];
+	columns = rows;
+
+	float** array = new float* [rows];
 	for (int i = 0; i < rows; i++)
 	{
-		array[i] = new int[columns];
+		array[i] = new float[columns];
 	}
+
 	cout << "введите элементы матрицы,но учтите,что заполнение происходит слева на право." << endl;
 	for (int i = 0; i < rows;i++)
 	{
@@ -20,7 +23,7 @@ int transponirovanie() {
 			cin >> array[i][j];
 		}
 	}
-
+	
 	system("cls");
 
 	cout << "матрица:";
@@ -32,15 +35,17 @@ int transponirovanie() {
 			cout <<"a("<<i<<","<<j<<")=" << array[i][j]<<"\t";
 		}
 	}
+
+	for (int i = 0; i < rows; i++)
 	{
-		for (int i = 0; i < rows; i++)
+		for (int j = 0; j < columns; j++)
 		{
-			for (int j = 0; j < columns; j++)
-			{
-				array[i][j] = array[j][i];	
-			}
+			tmp = array[i][j];
+			array[i][j] = array[j][i];
+			array[j][i] = tmp;
 		}
 	}
+
 	cout << "\n\n\nтранспонированная матрица: ";
 	for (int i = 0; i < rows;i++)
 	{
@@ -50,12 +55,13 @@ int transponirovanie() {
 			cout << "a(" << i << "," << j << ")=" <<array[j][i] << "\t";
 		}
 	}
+
 	cout << "\n\n\n";
+
 	for (int i = 0; i < rows; i++)
 	{
 		delete[]array[i];
 	}
-	system("pause");
 	delete array;
 	return 0;
 }

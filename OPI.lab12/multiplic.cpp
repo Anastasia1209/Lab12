@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 double multiplic() {
 	setlocale(LC_CTYPE, "ru");
 	double length,k=0,m=1;

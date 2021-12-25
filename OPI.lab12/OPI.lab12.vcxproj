@@ -142,8 +142,11 @@
     <ClCompile Include="difference.cpp" />
     <ClCompile Include="division.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matriсes.cpp" />
     <ClCompile Include="multiplic.cpp" />
+    <ClCompile Include="multiplication.cpp" />
     <ClCompile Include="sum.cpp" />
+    <ClCompile Include="sumOfMatrices.cpp" />
     <ClCompile Include="transponirovanie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,27 +1,24 @@
 #include<iostream>
 using namespace std;
-int transponirovanie();
+void matrices();
 double multiplic();
 double division();
 double sum();
 double difference();
-int opredelitel();
 void main() {
 	setlocale(LC_CTYPE, "RUSSIAN");
-
-	int option=0, a = 0;
+	int option = 0, a = 0;
 	while (a != 1)
 	{
-		cout << "_______________________&&___________________________" << endl;
-		cout << "||Выберите действие,которое необходимо выполнить: ||" << endl;
-		cout << "||1.Умножение  чисел                              ||" << endl;
-		cout << "||2.Деление чисел                                 ||" << endl;
-		cout << "||3.Сложение числел                               ||" << endl;
-		cout << "||4.Вычитание чисел                               ||" << endl;
-		cout << "||5.Транспонирование матрицы                      ||" << endl;
-		cout << "||6.Определитель матрицы                          ||" << endl;
-		cout << "||7.Выход из программы                            ||" << endl;
-		cout << "****************************************************" << endl;
+		cout << "___________________________$$_________________________" << endl;
+		cout << "||  Выберите действие,которое необходимо выполнить: ||" << endl;
+		cout << "||  1.Умножение чисел                               ||" << endl;
+		cout << "||  2.Деление чисел                                 ||" << endl;
+		cout << "||  3.Сложение числел                               ||" << endl;
+		cout << "||  4.Вычитание чисел                               ||" << endl;
+		cout << "||  5.Действия с матрицами                          ||" << endl;
+		cout << "||  6.Выход                                         ||" << endl;
+		cout << "***************************&&***********************" << endl;
 		cout << "\nВыберите действие калькулятора: ";
 		while (true)
 		{
@@ -37,9 +34,10 @@ void main() {
 				break;
 		}
 		cout << "Успешно !" << endl;
-		switch (option) {
+		switch (option)
+		{
 			case 1:
-			{	
+			{
 				cout << "результат умножения равен: " << multiplic() << endl;
 				system("pause");
 				system("cls");
@@ -54,33 +52,24 @@ void main() {
 			}
 			case 3:
 			{
-				cout << "результат суммирования= " << sum() << endl;
+				cout << "результат суммирования = " << sum() << endl;
 				system("pause");
 				system("cls");
 				break;
 			}
 			case 4:
 			{
-				cout << "разность= " << difference() << endl;
+				cout << "разность = " << difference() << endl;
 				system("pause");
 				system("cls");
 				break;
 			}
 			case 5:
 			{
-				transponirovanie();
-				system("pause");
-				system("cls");
+				matrices();
 				break;
 			}
-			/*case 6:
-			{
-				opredelitel();
-				system("pause");
-				system("cls");
-				break;
-			}*/
-			case 7:
+			case 6:
 			{
 				a = 1;
 				break;
