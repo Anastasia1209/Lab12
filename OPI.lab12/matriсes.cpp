@@ -41,13 +41,13 @@ void matrices() {
 				break;
 			}
 			case 2: {
-				multiplication();
+				sumOfMatrices();
 				system("pause");
 				system("cls");
 				break;
 			}
 			case 3: {
-				sumOfMatrices();
+				multiplication();
 				system("pause");
 				system("cls");
 			}
