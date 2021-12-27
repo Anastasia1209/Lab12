@@ -11,6 +11,11 @@ double division() {
 	for (int i = 0; i < length; i++)
 	{
 		cin >> arr[i];
+		while(arr[i] == 0)
+		{
+			cout << "на ноль делить нельзя!Выберите,пожалуйста,другое число: ";
+			cin >> arr[i];
+		}
 		d = arr[0];
 	}
 	for (int i = 0; i < length-1; i++)

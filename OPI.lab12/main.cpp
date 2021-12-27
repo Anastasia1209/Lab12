@@ -5,9 +5,10 @@ double multiplic();
 double division();
 double sum();
 double difference();
+int examinationOfSwitch(int& option);
 void main() {
 	setlocale(LC_CTYPE, "RUSSIAN");
-	int option = 0, a = 0;
+	int a = 0,option=0;
 	while (a != 1)
 	{
 		cout << "___________________________$$_________________________" << endl;
@@ -20,19 +21,7 @@ void main() {
 		cout << "||  6.Выход                                         ||" << endl;
 		cout << "***************************&&***********************" << endl;
 		cout << "\nВыберите действие калькулятора: ";
-		while (true)
-		{
-			if (!(cin >> option))
-			{
-				cin.clear();
-				while (cin.get() != '\n');
-				cout << "Эй, тут должно быть число" << endl;
-			}
-			else if (option < 1 || option > 7)
-				cout << "Не то число!" << endl;
-			else
-				break;
-		}
+		examinationOfSwitch(option);
 		cout << "Успешно !" << endl;
 		switch (option)
 		{

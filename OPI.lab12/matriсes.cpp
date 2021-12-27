@@ -1,11 +1,12 @@
 #include<iostream>
 using namespace std;
-int opredelitel();
+int determinant();
 int multiplication();
 int transponirovanie();
 int sumOfMatrices();
+int examinationOfSwitch(int& option);
 void matrices() {
-	int a = 0;
+	int option = 0;
 	bool b = true;
 	while (b == true)
 	{
@@ -19,20 +20,9 @@ void matrices() {
 		cout << "&&  5.Выход из подменю :(                           ^^" << endl;
 		cout << "######################################################" << endl;
 		cout << "\nВыберите действие калькулятора: ";
-		while (true)
-		{
-				if (!(cin >> a))
-				{
-					cin.clear();
-					while (cin.get() != '\n');
-					cout << "Эй, тут должно быть число" << endl;
-				}
-				else if (a < 1 || a > 5)
-					cout << "Не то число!" << endl;
-				else
-					break;
-			}
-			switch (a)
+		examinationOfSwitch(option);
+		printf("успешно!");
+			switch (option)
 			{
 			case 1: {
 				transponirovanie();
@@ -53,6 +43,7 @@ void matrices() {
 			}
 			case 4:
 			{
+				int determinant();
 				break;
 			}
 			case 5: {

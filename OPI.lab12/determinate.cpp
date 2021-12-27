@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 int** submatrix(int** matrix, unsigned int n, unsigned int x, unsigned int y) {
     int** submatrix = new int* [n - 1];
     int subi = 0;
@@ -35,7 +37,7 @@ int determinant(int** matrix, unsigned int n) {
     return det;
 }
 
-int main() {
+int determinant() {
     setlocale(LC_ALL, "rus");
     int n;
     cout << "Введите размер квадратной матрицы: " << endl;

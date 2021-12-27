@@ -1,12 +1,17 @@
 #include<iostream>
 using namespace std;
+
+int examinationOfSwitch(int& option);
+
+int fillingOfMatrix(float** array, int& rows, int& columns);
+
 int transponirovanie() {
 	setlocale(LC_CTYPE, "ru");
 	int rows, columns;
 	float tmp;
 
-	cout << "введите количество строк и столбцов: ";
-	cin >> rows;
+	cout << "\nвведите количество строк и столбцов: ";
+	examinationOfSwitch(rows);
 	columns = rows;
 
 	float** array = new float* [rows];
@@ -16,14 +21,7 @@ int transponirovanie() {
 	}
 
 	cout << "введите элементы матрицы,но учтите,что заполнение происходит слева на право." << endl;
-	for (int i = 0; i < rows;i++)
-	{
-		for (int j = 0;j < columns;j++)
-		{
-			cin >> array[i][j];
-		}
-	}
-	
+	fillingOfMatrix(array, rows,columns);
 	system("cls");
 
 	cout << "матрица:";
