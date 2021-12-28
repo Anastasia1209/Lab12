@@ -5,7 +5,7 @@ using namespace std;
 int examinationOfSwitch(int&);
 int examinationOfNumber(int&);
 
-int main()
+int multiplication()
 {
     setlocale(LC_CTYPE, "rus");
     
