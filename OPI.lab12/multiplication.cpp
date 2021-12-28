@@ -2,16 +2,20 @@
 
 using namespace std;
 
-int multiplication()
+int examinationOfSwitch(int&);
+int examinationOfNumber(int&);
+
+int main()
 {
     setlocale(LC_CTYPE, "rus");
-
+    
+    // Инициализация матриц
     int rowA, columnA, rowB, columnB, rowC, columnC;
-    cout << "Введите количество строк первой матрицы: "; cin >> rowA;
-    cout << "Введите количество столбцов первой матрицы: "; cin >> columnA;
+    cout << "Введите количество строк первой матрицы: "; examinationOfSwitch(rowA);
+    cout << "Введите количество столбцов первой матрицы: "; examinationOfSwitch(columnA);
     rowB = columnA;
     cout << "Количество строк второй матрицы: " << rowB << endl;
-    cout << "Введите количество столбцов второй матрицы: "; cin >> columnB;
+    cout << "Введите количество столбцов второй матрицы: "; examinationOfSwitch(columnB);
     if (rowA > rowB) rowC = rowA;
     else rowC = rowB;
     if (columnA > columnB) columnC = columnA;
@@ -20,14 +24,17 @@ int multiplication()
     int* B = new int[rowB * columnB];
     int* C = new int[rowC * columnC];
 
+    //Заполнение матриц A и B
     for (int i = 0; i < rowA * columnA; i++)
     {
-        cout << "Введите a" << i / rowA + 1 << i % rowA + 1 << ": "; cin >> A[i];
+        cout << "Введите a" << i / rowA + 1 << i % rowA + 1 << ": "; examinationOfNumber(A[i]);
     }
     for (int i = 0; i < rowB * columnB; i++)
     {
-        cout << "Введите b" << i / rowB + 1 << i % rowB + 1 << ": "; cin >> B[i];
+        cout << "Введите b" << i / rowB + 1 << i % rowB + 1 << ": "; examinationOfNumber(B[i]);
     }
+
+    //Вычисление матрицы C
     for (int i = 0; i < rowC; i++)
     {
         for (int j = 0; j < columnC; j++)
@@ -40,6 +47,7 @@ int multiplication()
         }
     }
 
+    //Вывод
     for (int i = 0; i < rowA * columnA; i++)
     {
         cout << A[i] << '\t';
@@ -62,4 +70,21 @@ int multiplication()
     delete[] B;
     delete[] C;
     return 0;
+}
+
+int examinationOfNumber(int& option) {
+    while (true)
+    {
+        if (!(cin >> option))
+        {
+            cin.clear();
+            while (cin.get() != '\n');
+            cout << "Эй, тут должно быть число" << endl;
+        }
+        else if (option < -100 || option > 100)
+            cout << "Не то число!" << endl;
+        else
+            break;
+    }
+    return option;
 }
