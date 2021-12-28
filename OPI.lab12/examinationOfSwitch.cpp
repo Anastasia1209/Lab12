@@ -7,10 +7,10 @@ int examinationOfSwitch(int &option) {
 		{
 			cin.clear();
 			while (cin.get() != '\n');
-			cout << "Эй, тут должно быть число" << endl;
+			cout << "Некорректный ввод.Введите еще раз." << endl;
 		}
 		else if (option < 1 || option > 6)
-			cout << "Не то число!" << endl;
+			cout << "Некорректный ввод.Введите еще раз." << endl;
 		else
 			break;
 	}

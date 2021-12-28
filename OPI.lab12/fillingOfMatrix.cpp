@@ -10,7 +10,7 @@ int fillingOfMatrix(float** array, int& rows, int& columns) {
 			{
 				cin.clear();
 				cin.ignore(32767, '\n');\
-					cout << "Ёй, тут должно быть число\n";
+					cout << "Ќекорректный ввод.¬ведите еще раз.\n";
 				cin >> array[i][j];
 			}
 
